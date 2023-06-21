@@ -9,6 +9,7 @@
 body {
     min-height: 100vh;
     background: #ffffff;
+    position: relative;
 }
 
 nav {
@@ -19,7 +20,7 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.1rem;
+    gap: 0.8rem;
 }
 
 nav ul .sign-btn {
@@ -30,6 +31,13 @@ nav ul .sign-btn {
     background: #1e76e9;
     border-radius: 5px;
     font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+}
+
+nav ul .sign-btn:hover{
+    background-color: #186ad5;
+    box-shadow: 0 1px 5px rgb(0, 0, 0, 0.2);
 }
 
 nav ul .link {
@@ -50,8 +58,14 @@ ul .link a:hover {
 ul .material-symbols-outlined {
     display: flex;
     align-items: center;
-    color: #494949;
+    color: #5f6368;
     font-size: 24px;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+ul .material-symbols-outlined:hover{
+    background: #f3f3f3;
 }
 
 .container {
@@ -59,19 +73,20 @@ ul .material-symbols-outlined {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0 1rem;
 }
 
-.container .logo{
+.container .logo {
     width: 272px;
     margin: 2.25rem 0 -0.3rem 0;
 }
 
-.container .logo img{
+.container .logo img {
     width: 100%;
     height: auto;
 }
 
-.container .search-bar{
+.container .search-bar {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -82,7 +97,11 @@ ul .material-symbols-outlined {
     min-height: 45px;
 }
 
-.container .search-bar input{
+.container .search-bar:hover {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container .search-bar input {
     width: calc(100% - 8rem);
     font-size: 16px;
     border: none;
@@ -90,58 +109,142 @@ ul .material-symbols-outlined {
     text-overflow: clip;
 }
 
-.container .search-bar .material-symbols-outlined{
+.container .search-bar .material-symbols-outlined {
     font-size: 22px;
     color: #a6a6a6;
     padding: 0 15px;
+    user-select: none;
 }
 
-.container .search-bar .func{
+.container .search-bar .func {
     height: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0 15px;
-    gap: .7rem;
+    gap: 0.7rem;
+    user-select: none;
 }
 
-.func img{
+.func img {
     height: 100%;
     cursor: pointer;
 }
 
-.container .buttons{
+.container .buttons {
     display: flex;
     gap: 0.7rem;
     align-items: center;
     margin: 1.7rem auto 1.2rem auto;
 }
 
-.container .buttons button{
+.container .buttons button {
     padding: 0.6rem 1rem;
     font-size: 14px;
     color: #3c4043;
     background: #f8f9fa;
     border: 1px solid #f8f9fa;
     border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
 }
-.container .buttons button:hover{
+.container .buttons button:hover {
     border: 1px solid #cacaca;
 }
 
-.container .lang{
+.container .lang {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     line-height: 28px;
     font-size: 13px;
     color: #494949;
     gap: 0.5rem;
 }
 
-.container .lang a{
+.container .lang a {
     color: #1a0dab;
 }
 
-.container .lang a:hover{
+.container .lang a:hover {
     text-decoration: underline;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: #70757a;
+    font-size: 14px;
+    background: #f2f2f2;
+    width: 100%;
+}
+
+footer .country {
+    padding: 1rem 2rem;
+    font-size: 15px;
+}
+
+footer .country {
+    border-bottom: 1px solid #dadce0;
+}
+
+footer .footer-nav {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+footer .footer-nav a {
+    font-size: 14px;
+    color: #70757a;
+}
+.footer-nav-1 {
+    order: 1;
+}
+.footer-nav-2 {
+    order: 2;
+}
+.footer-nav-3 {
+    order: 3;
+}
+
+footer .footer-nav ul a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-nav .leaf-icon {
+    padding: 5px;
+}
+
+footer .footer-nav .leaf-icon img {
+    width: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+    footer .footer-nav .footer-nav-2 {
+        order: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+
+    footer .footer-nav {
+        padding: 0;
+        justify-content: space-evenly;
+    }
+    footer .footer-nav ul {
+        padding: 1rem 2rem;
+    }
 }
